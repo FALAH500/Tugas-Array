@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Pegawai</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #000000;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #51ddbf;
+        }
+        h1 {
+            color: #000;
+        }
+        body{
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center;">Data Pegawai</h1>
+
+<table id="pegawaiTable">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>Umur</th>
+            <th>Jabatan</th>
+            <th>Lama Bekerja</th>
+            <th>Gaji</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data pegawai akan ditambahkan di sini -->
+    </tbody>
+</table>
+
+<script>
+    // Array pegawai
+    const pegawai = [
+        { id: 1, nama: "Yadi Supriyanto", JK:"Laki-laki", umur:"45", jabatan: "Manajer", LBekerja:"30 Tahun", gaji: "Rp 15.000.000" },
+        { id: 2, nama: "Evi Lestari", JK:"Perempuan", umur:"45", jabatan: "HRD", LBekerja:"20 Tahun", gaji: "Rp 8.000.000" },
+        { id: 3, nama: "Budi Santoso", JK:"Laki-laki", umur:"32", jabatan: "Staff Administrasi", LBekerja:"7 Tahun", gaji: "Rp 4.000.000" },
+        { id: 4, nama: "Dewi Sri", JK:"Perempuan", umur:"45", jabatan: "Staff Marketing", LBekerja:"6 Tahun", gaji: "Rp 5.000.000" },
+        { id: 5, nama: "Hengki Kurniawan",JK:"Laki-laki",  umur:"45", jabatan: "Staff IT ", LBekerja:"10 Tahun", gaji: "Rp 6.000.000" },
+        
+    ];
+
+    // Mendapatkan elemen tbody dari tabel
+    const tbody = document.querySelector("#pegawaiTable tbody");
+
+    // Menambahkan data pegawai ke dalam tabel
+    pegawai.forEach(p => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${p.id}</td>
+            <td>${p.nama}</td>
+            <td>${p.JK}</td>
+            <td>${p.umur}</td>
+            <td>${p.jabatan}</td>
+            <td>${p.LBekerja}</td>
+            <td>${p.gaji}</td>
+        `;
+        tbody.appendChild(row);
+    });
+</script>
+
+</body>
+</html>
